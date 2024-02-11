@@ -21,3 +21,15 @@ playBtn.addEventListener("click", () => {
     playBtn.classList.replace("fa-play", "fa-pause");
   }
 });
+
+audio.addEventListener("canplay", () => {
+  range.max = audio.duration;
+});
+
+audio.addEventListener("timeupdate", () => {
+  range.value = audio.currentTime;
+});
+
+range.addEventListener("input", () => {
+  audio.currentTime = range.value;
+});
