@@ -6,9 +6,18 @@ let nextBtn = document.querySelector("#next-btn");
 let playBtn = document.querySelector("#play-btn");
 let audio = document.createElement("audio");
 
-audio.src = "musics/kabk.mp3";
-musicName.innerText = "kabk";
-musicCover.src = "imgs/kabk.jpg";
+let musics = [
+  {
+    name: "kabk",
+    cover: "imgs/kabk.jpg",
+    audio: "musics/kabk.mp3",
+  },
+];
+
+let currentMusic = 0;
+audio.src = musics[currentMusic].audio;
+musicName.innerText = musics[currentMusic].name;
+musicCover.src = musics[currentMusic].cover;
 
 playBtn.addEventListener("click", () => {
   if (audio.paused) {
