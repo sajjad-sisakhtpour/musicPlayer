@@ -4,28 +4,27 @@ let range = document.querySelector("#music-time");
 let preBtn = document.querySelector("#pre-btn");
 let nextBtn = document.querySelector("#next-btn");
 let playBtn = document.querySelector("#play-btn");
-let audio = document.createElement("audio");
 
 let musics = [
   {
     name: "kabk",
     cover: "imgs/kabk.jpg",
-    audio: "musics/kabk.mp3",
+    audio: new Audio("musics/kabk.mp3"),
   },
   {
     name: "chap 3",
     cover: "imgs/chap-3.jpg",
-    audio: "musics/chap-3.mp3",
+    audio: new Audio("musics/chap-3.mp3"),
   },
   {
     name: "miri",
     cover: "imgs/miri.jpg",
-    audio: "musics/miri.mp3",
+    audio: new Audio("musics/miri.mp3"),
   },
 ];
 
 let currentMusic = 0;
-audio.src = musics[currentMusic].audio;
+let audio = musics[currentMusic].audio;
 musicName.innerText = musics[currentMusic].name;
 musicCover.src = musics[currentMusic].cover;
 
@@ -74,7 +73,11 @@ function changeMusic(state) {
     else currentMusic -= 1;
   }
 
-  audio.src = musics[currentMusic].audio;
+  audio = musics[currentMusic].audio;
   musicName.innerText = musics[currentMusic].name;
   musicCover.src = musics[currentMusic].cover;
+
+  audio.addEventListener("timeupdate", () => {
+    range.value = audio.currentTime;
+  });
 }
