@@ -52,3 +52,29 @@ audio.addEventListener("timeupdate", () => {
 range.addEventListener("input", () => {
   audio.currentTime = range.value;
 });
+
+nextBtn.addEventListener("click", () => {
+  changeMusic("next");
+});
+
+preBtn.addEventListener("click", () => {
+  changeMusic("pre");
+});
+
+function changeMusic(state) {
+  audio.pause();
+  musicCover.style.animationPlayState = "paused";
+  range.value = 0;
+  audio.currentTime = 0;
+  if (state == "next") {
+    if (currentMusic == musics.length - 1) currentMusic = 0;
+    else currentMusic += 1;
+  } else {
+    if (currentMusic == 0) currentMusic = musics.length - 1;
+    else currentMusic -= 1;
+  }
+
+  audio.src = musics[currentMusic].audio;
+  musicName.innerText = musics[currentMusic].name;
+  musicCover.src = musics[currentMusic].cover;
+}
