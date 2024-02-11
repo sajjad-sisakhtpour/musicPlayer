@@ -12,6 +12,16 @@ let musics = [
     cover: "imgs/kabk.jpg",
     audio: "musics/kabk.mp3",
   },
+  {
+    name: "chap 3",
+    cover: "imgs/chap-3.jpg",
+    audio: "musics/chap-3.mp3",
+  },
+  {
+    name: "miri",
+    cover: "imgs/miri.jpg",
+    audio: "musics/miri.mp3",
+  },
 ];
 
 let currentMusic = 0;
