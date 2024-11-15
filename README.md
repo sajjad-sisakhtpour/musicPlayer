@@ -67,10 +67,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **GitHub**: [sajjad-sisakhtpour](https://github.com/sajjad-sisakhtpour)
 - **LinkedIn**: [sajad-sisakht-pour](https://ir.linkedin.com/in/sajad-sisakht-pour)
 
-## Live Demo
-
-You can try the live demo of this music player [here](https://your-live-demo-link.com).
-
 ## Screenshots
 
 ### Screenshot 1
